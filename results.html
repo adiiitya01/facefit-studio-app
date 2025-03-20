@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Shape Advices</title>
+    <style>
+        body { background-color: #1a1a2e; color: #ffffff; font-family: Arial, sans-serif; padding: 20px; margin: 0; }
+        h1 { font-size: 1.8em; margin: 10px 0; }
+        p { font-size: 1em; margin: 10px 0; }
+        .upgrade-btn { background-color: #00aaff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; }
+        .upgrade-btn:hover { background-color: #0099dd; }
+        .section { margin: 20px 0; }
+        .section h2 { font-size: 1.5em; margin-bottom: 10px; }
+        .style-item { display: inline-block; width: 45%; margin: 10px; text-align: center; background-color: #222; padding: 10px; border-radius: 5px; }
+        .style-item img { width: 100%; height: auto; border-radius: 5px; }
+        .style-item p { font-size: 0.9em; margin: 5px 0; }
+        nav { background-color: #0f3460; position: fixed; bottom: 0; width: 100%; padding: 10px 0; display: flex; justify-content: space-around; }
+        nav a { color: white; text-decoration: none; font-size: 1em; }
+        nav a:hover { color: #e94560; }
+    </style>
+</head>
+<body>
+    
+
+    <div class="section">
+        <h2>Hairstyles</h2>
+        <div id="hairstyles"></div>
+    </div>
+
+    <div class="section">
+        <h2>Beard Styles</h2>
+        <div id="beard-styles"></div>
+    </div>
+
+    <nav>
+        <a href="style_tips.html">Style Tips</a>
+        <a href="#">Style Genie</a>
+        <a href="my_profile.html">My Profile</a>
+    </nav>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const faceShape = params.get('faceShape');
+        const faceShapeText = document.getElementById('face-shape-text');
+        const hairstylesDiv = document.getElementById('hairstyles');
+        const beardStylesDiv = document.getElementById('beard-styles');
+
+        // Display the detected face shape
+        faceShapeText.textContent = faceShape ? `Your face shape is ${faceShape}, and here are the styles we've picked just for you!` : 'No face shape detected';
+
+        // Define hairstyle and beard style recommendations for each face shape
+        const styleRecommendations = {
+            Oval: {
+                hairstyles: [
+                    { name: 'Quiff Haircut: Classic Confidence', description: 'A timeless look with volume on top.', image: 'images/oval_quiff.jpg' },
+                    { name: 'Fade: The Modern Essential', description: 'Clean and stylish with a tapered finish.', image: 'images/oval_fade.jpg' }
+                ],
+                beardStyles: [
+                    { name: 'Short Boxed Beard: A Professional Touch', description: 'Neat and structured for a polished look.', image: 'images/oval_short_boxed_beard.jpg' },
+                    { name: 'The Beardstache: Edge for the Balance', description: 'Combines a mustache with a short beard for style.', image: 'images/oval_beardstache.jpg' }
+                ]
+            },
+            Round: {
+                hairstyles: [
+                    { name: 'Long Layers: Elongating Style', description: 'Adds length to balance a round face.', image: 'images/round_long_layers.jpg' },
+                    { name: 'Shaggy Bob: Angular Definition', description: 'Creates angles to slim the face.', image: 'images/round_shaggy_bob.jpg' }
+                ],
+                beardStyles: [
+                    { name: 'Chin Strap: Lengthens the Face', description: 'Focuses on the chin to elongate.', image: 'images/round_chin_strap.jpg' },
+                    { name: 'Goatee: Adds Definition', description: 'Highlights the chin area.', image: 'images/round_goatee.jpg' }
+                ]
+            },
+            Square: {
+                hairstyles: [
+                    { name: 'Wavy Shag: Softens Jawline', description: 'Adds texture to balance strong angles.', image: 'images/square_wavy_shag.jpg' },
+                    { name: 'Long Layers: Elongates Face', description: 'Softens the jaw with flowing length.', image: 'images/square_long_layers.jpg' }
+                ],
+                beardStyles: [
+                    { name: 'Short Stubble: Softens Edges', description: 'Light beard to reduce jaw sharpness.', image: 'images/square_short_stubble.jpg' },
+                    { name: 'Full Beard: Balanced Look', description: 'Evenly distributes facial hair.', image: 'images/square_full_beard.jpg' }
+                ]
+            },
+            Heart: {
+                hairstyles: [
+                    { name: 'Chin-Length Bob: Balances Forehead', description: 'Adds width to the lower face.', image: 'images/heart_chin_bob.jpg' },
+                    { name: 'Side-Swept Waves: Softens Forehead', description: 'Balances a wider forehead.', image: 'images/heart_side_swept_waves.jpg' }
+                ],
+                beardStyles: [
+                    { name: 'Soul Patch: Highlights Chin', description: 'Adds focus to the narrower chin.', image: 'images/heart_soul_patch.jpg' },
+                    { name: 'Short Beard: Balances Proportions', description: 'Even coverage for harmony.', image: 'images/heart_short_beard.jpg' }
+                ]
+            },
+            Diamond: {
+                hairstyles: [
+                    { name: 'Textured Bob: Softens Cheekbones', description: 'Adds balance without emphasizing width.', image: 'images/diamond_textured_bob.jpg' },
+                    { name: 'Shag: Layered Elegance', description: 'Softens the face with texture.', image: 'images/diamond_shag.jpg' }
+                ],
+                beardStyles: [
+                    { name: 'Sideburns: Frames the Face', description: 'Highlights cheekbones subtly.', image: 'images/diamond_sideburns.jpg' },
+                    { name: 'Chin Curtain: Elongates Face', description: 'Adds length to the chin area.', image: 'images/diamond_chin_curtain.jpg' }
+                ]
+            },
+            Oblong: {
+                hairstyles: [
+                    { name: 'Soft Layers: Adds Width', description: 'Creates volume on the sides.', image: 'images/oblong_soft_layers.jpg' },
+                    { name: 'Waves: Horizontal Volume', description: 'Balances the longer face.', image: 'images/oblong_waves.jpg' }
+                ],
+                beardStyles: [
+                    { name: 'Full Beard: Widens Face', description: 'Adds breadth to the jawline.', image: 'images/oblong_full_beard.jpg' },
+                    { name: 'Chin Beard: Shortens Appearance', description: 'Focuses on the lower face.', image: 'images/oblong_chin_beard.jpg' }
+                ]
+            },
+            Triangle: {
+                hairstyles: [
+                    { name: 'Layered Cut: Adds Volume Above', description: 'Balances a wider jaw.', image: 'images/triangle_layered_cut.jpg' },
+                    { name: 'Choppy Pixie: Softens Jawline', description: 'Adds lightness to the top.', image: 'images/triangle_choppy_pixie.jpg' }
+                ],
+                beardStyles: [
+                    { name: 'Mustache: Draws Attention Up', description: 'Balances the jaw with focus above.', image: 'images/triangle_mustache.jpg' },
+                    { name: 'Light Stubble: Softens Jaw', description: 'Reduces the jaw’s prominence.', image: 'images/triangle_light_stubble.jpg' }
+                ]
+            }
+        };
+
+        // Populate hairstyles and beard styles
+        if (faceShape && styleRecommendations[faceShape]) {
+            styleRecommendations[faceShape].hairstyles.forEach(style => {
+                const div = document.createElement('div');
+                div.className = 'style-item';
+                div.innerHTML = `<img src="${style.image}" alt="${style.name}"><p><strong>${style.name}</strong></p><p>${style.description}</p>`;
+                hairstylesDiv.appendChild(div);
+            });
+
+            styleRecommendations[faceShape].beardStyles.forEach(style => {
+                const div = document.createElement('div');
+                div.className = 'style-item';
+                div.innerHTML = `<img src="${style.image}" alt="${style.name}"><p><strong>${style.name}</strong></p><p>${style.description}</p>`;
+                beardStylesDiv.appendChild(div);
+            });
+        } else {
+            hairstylesDiv.innerHTML = '<p>No hairstyle recommendations available.</p>';
+            beardStylesDiv.innerHTML = '<p>No beard style recommendations available.</p>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Hairstyles - Face Shape According Hairstyle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles and set global properties */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); /* Gradient background from dark blue to deeper blue */
+            color: #ffffff; /* White text for contrast */
+            font-family: 'Poppins', Arial, sans-serif; /* Modern font with fallback */
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Main content container */
+        .main-content {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2.8rem; /* Prominent title */
+            color: #e94560; /* Coral accent */
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+        }
+
+        /* Subtitle */
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #d3d3d3; /* Light gray for contrast */
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Section headings */
+        h2 {
+            font-size: 2rem;
+            color: #d3d3d3; /* Light gray */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #e94560;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 70px;
+        }
+
+        /* Section container */
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(15, 52, 96, 0.2); /* Semi-transparent background for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+        }
+
+        /* Style item container */
+        .style-item {
+            display: inline-block;
+            width: 220px;
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .style-item:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        /* Image styling */
+        .style-item img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid #e94560; /* Coral border */
+            border-radius: 15px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .style-item img:hover {
+            transform: scale(1.1); /* Slightly smaller scale for smoother hover */
+            border-color: #ff6f80; /* Lighter coral on hover */
+        }
+
+        /* Style item description */
+        .style-item p {
+            font-size: 1rem;
+            color: #e0e0e0; /* Light gray for readability */
+            margin: 10px 0 0;
+            line-height: 1.4;
+        }
+
+        .style-item p strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #0f3460; /* Dark blue */
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin: 0 25px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #e94560; /* Coral accent on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .style-item {
+                width: 180px;
+                margin: 10px;
+            }
+            .style-item img {
+                width: 160px;
+                height: 160px;
+            }
+            .style-item p {
+                font-size: 0.9rem;
+            }
+            nav a {
+                margin: 0 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .style-item {
+                display: block;
+                width: 100%;
+                max-width: 200px;
+                margin: 15px auto;
+            }
+            .style-item img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>Trending Hairstyles</h1>
+        <p class="subtitle">Explore the hottest hairstyle trends of 2025, perfect for any style!</p>
+
+        <div class="section">
+            <h2>Top Trends Men</h2>
+            <div class="style-item">
+                <img src="static\trending\download (7).jpg" alt="Textured Crop">
+                <p><strong>Textured Crop</strong><br>A short, textured cut with a modern edge.</p>
+            </div>
+            <div class="style-item">
+                <img src="\static\trending\download.jpg" alt="Buzz Cut with Fade">
+                <p><strong>Buzz Cut with Fade</strong><br>A bold, clean, and sharp look.</p>
+            </div>
+            <div class="style-item">
+                <img src="static\trending\download (1).jpg" alt="Shaggy Mullet">
+                <p><strong>Shaggy Mullet</strong><br>A modern mullet with retro vibes.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Top Trends Women</h2>
+            <div class="style-item">
+                <img src="static\trending\download (2).jpg" alt="Curtain Bangs">
+                <p><strong>Curtain Bangs Revival</strong><br>Soft, parted bangs with a 90s twist.</p>
+            </div>
+            <div class="style-item">
+                <img src="static\trending\download (3).jpg" alt="Long Layers with Waves">
+                <p><strong>Long Layers with Waves</strong><br>Flowing layers for versatile styling.</p>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <a href="style_tips.html">Style Tips</a>
+        <a href="index.html">Detect Face Shape</a>
+        <a href="my_profile.html">My Profile</a>
+    </nav>
+</body>
+</html>

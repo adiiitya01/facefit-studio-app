@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Face Shape Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e2a44 0%, #2b4064 100%);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e63946;
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+        }
+
+        .profile-info {
+            text-align: center;
+            flex: 1;
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            font-size: 1rem;
+            color: #a3bffa;
+        }
+
+        .upload-button {
+            background-color: #e63946;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .upload-button:hover {
+            background-color: #d62828;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section i {
+            font-size: 1.5rem;
+            color: #1e90ff;
+            margin-right: 15px;
+        }
+
+        .section-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .section-content h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .section-content p {
+            font-size: 0.9rem;
+            color: #a3bffa;
+        }
+
+        .new-badge {
+            background-color: #00d4ff;
+            color: #000;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .settings {
+            margin-top: 30px;
+        }
+
+        .settings h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .collapsible {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .collapsible:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .collapsible i {
+            font-size: 1.2rem;
+            color: #1e90ff;
+            margin-right: 10px;
+        }
+
+        .collapsible span {
+            font-size: 1rem;
+            color: #a3bffa;
+        }
+
+        .collapsible-content {
+            display: none;
+            padding: 10px 0 0;
+        }
+
+        .collapsible-content.active {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .profile-info h1 {
+                font-size: 1.5rem;
+            }
+            .profile-info p {
+                font-size: 0.9rem;
+            }
+            .upload-button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+            .section-content h2 {
+                font-size: 1rem;
+            }
+            .section-content p {
+                font-size: 0.8rem;
+            }
+        }
+        nav {
+            background-color: #0f3460; /* Dark blue */
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin: 0 25px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #e94560; /* Coral accent on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img id="profileImage" src="static/images/default-profile.jpg.png" alt="Profile Picture" class="profile-image">
+                    </div>
+
+        
+        <div class="section" onclick="alert('Edit Profile clicked')">
+            <i class="fas fa-user-edit"></i>
+            <div class="section-content">
+                <h2>Edit Profile</h2>
+            </div>
+        </div>
+
+        <div class="section">
+            <i class="fas fa-chart-line"></i>
+            <div class="section-content">
+                <h2>Face Shape Analysis</h2>
+                <p>Details about your face shape</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <i class="fas fa-book"></i>
+            <div class="section-content">
+                <h2>FaceStory</h2>
+                <p>Your face shape reveals your traits</p>
+            </div>
+            <span class="new-badge">New</span>
+        </div>
+
+        <div class="section">
+            <i class="fas fa-search"></i>
+            <div class="section-content">
+                <h2>Discover Your Face Shape</h2>
+                <p>Find out now for free</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <i class="fas fa-star"></i>
+            <div class="section-content">
+                <h2>Which Celebrity do you Look-Alike?</h2>
+                <p>Find out now for free</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <i class="fab fa-instagram"></i>
+            <div class="section-content">
+                <h2>Follow us on Instagram</h2>
+                <p>Stay updated with our latest tips</p>
+            </div>
+        </div>
+
+        <div class="settings">
+            <h3>Settings</h3>
+            <div class="collapsible" onclick="toggleCollapsible('account-settings')">
+                <div><i class="fas fa-user"></i> <span>Account Settings</span></div>
+                <span>+</span>
+            </div>
+            <div id="account-settings" class="collapsible-content">
+                <div class="section" onclick="alert('Manage account clicked')">
+                    <i class="fas fa-user"></i>
+                    <div class="section-content">
+                        <h2>Manage Account</h2>
+                    </div>
+                </div>
+                <div class="section" onclick="alert('Privacy clicked')">
+                    <i class="fas fa-lock"></i>
+                    <div class="section-content">
+                        <h2>Privacy</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible" onclick="toggleCollapsible('app-settings')">
+                <div><i class="fas fa-cog"></i> <span>App Settings</span></div>
+                <span>+</span>
+            </div>
+            <div id="app-settings" class="collapsible-content">
+                <div class="section" onclick="alert('Language clicked')">
+                    <i class="fas fa-language"></i>
+                    <div class="section-content">
+                        <h2>Language</h2>
+                    </div>
+                </div>
+                <div class="section" onclick="alert('Notifications clicked')">
+                    <i class="fas fa-bell"></i>
+                    <div class="section-content">
+                        <h2>Notifications</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible" onclick="toggleCollapsible('support-feedback')">
+                <div><i class="fas fa-headset"></i> <span>Support & Feedback</span></div>
+                <span>+</span>
+            </div>
+            <div id="support-feedback" class="collapsible-content">
+                <div class="section" onclick="alert('FAQs clicked')">
+                    <i class="fas fa-question-circle"></i>
+                    <div class="section-content">
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+                </div>
+                <div class="section" onclick="alert('Report an issue clicked')">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div class="section-content">
+                        <h2>Report an Issue</h2>
+                    </div>
+                </div>
+                <div class="section" onclick="alert('Rate app clicked')">
+                    <i class="fas fa-star"></i>
+                    <div class="section-content">
+                        <h2>Rate App</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle upload form
+        document.querySelector('.upload-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('uploadForm').style.display = 'block';
+        });
+
+        // Detect face shape and upload photo
+        function detectFaceShape() {
+            const fileInput = document.getElementById('photoInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select an image to upload.');
+                return;
+            }
+
+            const faceShapeElement = document.getElementById('faceShape');
+            faceShapeElement.textContent = 'Detecting...';
+
+            const formData = new FormData();
+            formData.append('image', file);
+
+            fetch('http://127.0.0.1:5000/detect_face_shape', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                    if (data.face_shape) {
+                        faceShapeElement.textContent = data.face_shape;
+                    } else {
+                        faceShapeElement.textContent = 'Not Detected';
+                    }
+                    if (data.uploaded_photo) {
+                        const profileImage = document.getElementById('profileImage');
+                        profileImage.src = data.uploaded_photo + '?t=' + new Date().getTime(); // Cache-busting
+                    }
+                } else {
+                    faceShapeElement.textContent = 'Not Detected';
+                    alert('Error: ' + data.error);
+                }
+                document.getElementById('uploadForm').style.display = 'none';
+            })
+            .catch(error => {
+                faceShapeElement.textContent = 'Not Detected';
+                console.error('Error detecting face shape:', error);
+                alert('Failed to detect face shape: ' + error.message);
+            });
+        }
+
+        // Toggle collapsible sections
+        function toggleCollapsible(sectionId) {
+            const content = document.getElementById(sectionId);
+            const isActive = content.classList.contains('active');
+            const allContents = document.querySelectorAll('.collapsible-content');
+            allContents.forEach(c => c.classList.remove('active'));
+            if (!isActive) {
+                content.classList.add('active');
+                content.previousElementSibling.querySelector('span').textContent = '-';
+            } else {
+                content.classList.remove('active');
+                content.previousElementSibling.querySelector('span').textContent = '+';
+            }
+        }
+    </script>
+     <nav>
+        <a href="style_tips.html">Style Tips</a>
+        <a href="index.html">Detect Face Shape</a>
+        </nav>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - FaceFit Studio</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with gradient background */
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a4066 60%, #0f3460 100%);
+    color: #ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for centering content */
+.container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Header styling */
+header h1 {
+    font-size: 2.8rem;
+    color: #e94560;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main content styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* Signup content section */
+#signup-content {
+    background: rgba(15, 52, 96, 0.8);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+#signup-content h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #d3d3d3;
+    margin-bottom: 20px;
+}
+
+/* Login section styling */
+.login-section {
+    margin-top: 20px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e94560;
+}
+
+/* Form styling */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#signup-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #1a1a2e;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#signup-form input:focus {
+    box-shadow: 0 0 8px rgba(233, 69, 96, 0.5);
+}
+
+#signup-form button {
+    background: #e94560;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#signup-form button:hover {
+    background: #ff6f80;
+    transform: translateY(-2px);
+}
+
+/* Error message styling */
+#signup-error {
+    font-size: 0.9rem;
+    color: #ff4d4d;
+    margin-top: 10px;
+}
+
+/* Link text styling */
+.link-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #d3d3d3;
+}
+
+.link-text a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.link-text a:hover {
+    color: #ff6f80;
+}
+
+/* Navigation bar styling */
+.nav-bar {
+    background: linear-gradient(90deg, #0f3460, #1a2a4e);
+    padding: 18px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 30px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-item:hover {
+    color: #e94560;
+    transform: translateY(-3px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    #signup-content {
+        padding: 20px;
+    }
+
+    .nav-item {
+        font-size: 1rem;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #signup-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    #signup-form input,
+    #signup-form button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .nav-item {
+        font-size: 0.9rem;
+        margin: 0 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sign Up</h1>
+        </header>
+        <main>
+            <div id="signup-content">
+                <h2>Create Your Account</h2>
+                <p class="subtitle">Join us to unlock personalized style recommendations.</p>
+
+                <div class="login-section">
+                    <div class="login-card">
+                        <form id="signup-form">
+                            <input type="text" id="new-username" placeholder="Username" required>
+                            <input type="password" id="new-password" placeholder="Password" required>
+                            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                            <button type="submit">Sign Up</button>
+                        </form>
+                        <div id="signup-error" style="display: none; color: red;"></div>
+                    </div>
+                    <p class="link-text">
+                        Already have an account? <a href="login.html">Login</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="style-tips.html" class="nav-item">Style Tips</a>
+        <a href="style-genie.html" class="nav-item">Style Genie</a>
+        <a href="my-profile.html" class="nav-item">My Profile</a>
+    </nav>
+
+    <script src="/static/signup.js"></script>
+</body>
+</html>

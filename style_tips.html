@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Tips - Face Shape According Hairstyle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles and set global properties */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a2e; /* Deep blue-black background */
+            background-image: linear-gradient(135deg, rgba(14, 23, 47, 0.8), rgba(26, 26, 46, 1)), url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"%3E%3Cg fill="%231e3a8a" fill-opacity="0.1"%3E%3Cpath d="M0 40L40 0H20L0 20z"/%3E%3Cpath d="M40 40L20 0v40z"/%3E%3C/g%3E%3C/svg%3E'); /* Subtle geometric pattern */
+            color: #ffffff; /* White text for contrast */
+            font-family: 'Poppins', Arial, sans-serif; /* Modern, professional font with fallback */
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main content container */
+        .main-content {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2.8rem; /* Prominent title */
+            color: #e94560; /* Coral accent */
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+        }
+
+        /* Section headings */
+        h2 {
+            font-size: 2rem;
+            color: #d3d3d3; /* Light gray for contrast */
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-transform: capitalize;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #e94560;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 70px;
+        }
+
+        /* Paragraph and list styling */
+        p, ul {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            color: #e0e0e0; /* Slightly lighter gray for readability */
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0 20px;
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        li {
+            margin: 15px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: '•'; /* Custom bullet point */
+            color: #e94560;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        li strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #0f3460; /* Dark blue */
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin: 0 25px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #e94560; /* Coral accent on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            p, ul {
+                font-size: 1rem;
+            }
+            ul {
+                padding: 0 10px;
+            }
+            nav a {
+                margin: 0 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>Style Tips</h1>
+        <p>Discover styling tips to enhance your look and express your personal style!</p>
+
+        <h2>About Styling</h2>
+        <p>Styling is all about enhancing your natural features while expressing your unique personality. Here’s how to get started:</p>
+        <ul>
+            <li><strong>Understand Face Shape and Proportions:</strong> Recognize your face shape to highlight or balance features—like softening a strong jawline for Square faces or adding volume for Oblong faces.</li>
+            <li><strong>Hair Type and Texture:</strong> Choose styles that suit your hair’s natural texture (straight, wavy, curly, coily). For example, curly hair can elongate a Round face, while straight hair can frame an Oval face.</li>
+            <li><strong>Personal Style and Lifestyle:</strong> Match your hairstyle to your personality and routine. A busy professional might prefer a low-maintenance Textured Crop, while a creative individual might opt for a bold Shaggy Mullet.</li>
+            <li><strong>Balance Trends with Timelessness:</strong> Trends like Curtain Bangs are hot in 2025, but ensure they suit your features. Pair them with timeless cuts (e.g., layered styles) for versatility.</li>
+            <li><strong>Experiment and Adapt:</strong> Try new looks with temporary styling tools (e.g., hair gel, clip-in bangs) before committing to a change.</li>
+        </ul>
+
+        <h2>General Hair Care Tips</h2>
+        <p>Keep your hair looking its best with these universal tips:</p>
+        <ul>
+            <li><strong>Hydrate Your Hair:</strong> Use a moisturizing shampoo and conditioner to prevent dryness.</li>
+            <li><strong>Regular Trims:</strong> Trim your hair every 6-8 weeks to maintain healthy ends.</li>
+            <li><strong>Protect from Heat:</strong> Use a heat protectant spray before styling with hot tools.</li>
+            <li><strong>Scalp Care:</strong> Massage your scalp with oil weekly to promote healthy hair growth.</li>
+        </ul>
+
+        <h2>Fashion and Accessory Trends</h2>
+        <p>Elevate your style with these trends:</p>
+        <ul>
+            <li><strong>Statement Earrings:</strong> Large hoops or dangling earrings draw attention to your face.</li>
+            <li><strong>Layered Necklaces:</strong> Mix delicate chains with bold pendants for a chic look.</li>
+            <li><strong>Scarves:</strong> A lightweight scarf can add color and texture to any outfit.</li>
+            <li><strong>Monochrome Outfits:</strong> Wearing one color head-to-toe creates a sleek, elongated silhouette.</li>
+        </ul>
+
+        <h2>Tips for User Fashion</h2>
+        <p>Enhance your wardrobe with these fashion tips to complement your overall style:</p>
+        <ul>
+            <li><strong>Dress for Your Body Type:</strong> Choose clothing that balances your proportions—e.g., A-line dresses for pear shapes or fitted blazers for rectangle shapes.</li>
+            <li><strong>Use Necklines to Frame Your Face:</strong> V-necks elongate the neck for Round or Heart faces, while turtlenecks suit Oval or Oblong faces.</li>
+            <li><strong>Play with Colors to Enhance Features:</strong> Wear jewel tones like emerald or sapphire (trending in 2025) to make your facial features pop.</li>
+            <li><strong>Layer Smartly for Depth:</strong> Pair a fitted top with a structured jacket to define your silhouette, especially for Square or Triangle face shapes.</li>
+            <li><strong>Choose Accessories Wisely:</strong> Statement pieces like oversized earrings can balance proportions—e.g., long earrings elongate a Round face.</li>
+            <li><strong>Mix Trends with Classics:</strong> Incorporate 2025 trends like monochrome outfits with timeless pieces (e.g., a white shirt) for a balanced look.</li>
+            <li><strong>Confidence is Key:</strong> Wear what makes you feel confident, prioritizing comfort and self-expression.</li>
+        </ul>
+    </div>
+
+    <nav>
+        <a href="trending_hairstyles.html">Trending Hairstyles</a>
+        <a href="index.html">Detect Face Shape</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FaceFit Studio</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+            background: linear-gradient(135deg, #1e2a44 0%, #2b4064 100%);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+    /* Ensure these styles from signup.html apply to login.html */
+#login-content {
+    
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+#login-content h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#login-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #1a1a2e;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#login-form input:focus {
+    box-shadow: 0 0 8px rgba(233, 69, 96, 0.5);
+}
+
+#login-form button {
+    background: #e94560;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#login-form button:hover {
+    background: #ff6f80;
+    transform: translateY(-2px);
+}
+
+#login-error {
+    font-size: 0.9rem;
+    color: #ff4d4d;
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Login</h1>
+        </header>
+        <main>
+            <div id="login-content">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Sign in to access your personalized style recommendations.</p>
+
+                <div class="login-section">
+                    <div class="login-card">
+                        <form id="login-form">
+                            <input type="text" id="username" placeholder="Username" required>
+                            <input type="password" id="password" placeholder="Password" required>
+                            <button type="submit">Login</button>
+                        </form>
+                        <div id="login-error" style="display: none; color: red;"></div>
+                    </div>
+                    <p class="link-text">
+                        Don't have an account? <a href="signup.html">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+    <script src="/static/login.js"></script>
+</body>
+</html>
